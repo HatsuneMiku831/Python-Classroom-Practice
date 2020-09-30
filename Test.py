@@ -1,13 +1,10 @@
-s = [
+s = []
 
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0]
+n = eval(input("輸入數值:"))
 
-    ]
 
-for nownum in range(1, 10):
+
+for nownum in range(1, n * n + 1):
 
     print(nownum)
 
-    
