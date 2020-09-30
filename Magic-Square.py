@@ -1,6 +1,6 @@
 square = []
 
-n = 3
+n = eval(input("輸入數值:"))
 
 for i in range(n + 1):
 
@@ -41,7 +41,5 @@ for k in range(len(matrix)):
     for l in range(len(matrix[0])):
 
         matrix[k][l] = square[k + 1][l + 1]
-
-#return matrix
 
 print(matrix)
