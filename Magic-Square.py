@@ -9,7 +9,7 @@ for i in range(n + 1):
 i = 0
 j = (n + 1) // 2
 
-for key in range(1, n ** 2 + 1):
+for key in range(1, (n * n) + 1):
 
     if key % n == 1:
 
