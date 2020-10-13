@@ -1,6 +1,6 @@
 sum = 1
 
-for r in range(1, 9999):
+for r in range(1, 99):
 
     sum = sum / r
 
@@ -21,4 +21,4 @@ for i in range(1, n + 1):
 
 y = float(total)
 
-print("e = %.7f"%y)
+print("e=%.7f"%y)
