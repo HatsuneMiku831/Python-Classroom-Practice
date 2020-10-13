@@ -1,28 +1,28 @@
 row = 0
 
-a = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+square = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 
-col = int(len(a) / 2)
-a[row][col] = 1
+col = int(len(square) / 2)
+square[row][col] = 1
 
-for i in range(2, len(a) ** 2 + 1):
+for i in range(2, len(square) ** 2 + 1):
 
-    row_next = (row - 1) % 5
-    col_next = (col + 1) % 5
+    rown = (row - 1) % 5
+    coln = (col + 1) % 5
 
-    if a[row_next][col_next] == 0:
+    if square[rown][coln] == 0:
 
-        row_next = (row - 1) % 5
-        col_next = (col + 1) % 5
-        a[row_next][col_next] = i
-        row = row_next
-        col = col_next
+        rown = (row - 1) % 5
+        coln = (col + 1) % 5
+        square[rown][coln] = i
+        row = rown
+        col = coln
 
     else:
         
-        a[row + 1][col] = i
+        square[row + 1][col] = i
         row = row + 1
 
-for s in range(len(a)):
+for n in range(len(square)):
 
-    print(a[s])
+    print(square[n])
