@@ -22,11 +22,8 @@ for i in range(5):
             num = int(random.uniform(1, 52))
 
     ccard[i] = num
-    print(ccard)
 
 ccard.sort()
-
-print(ccard)
 
 for k in range(5):
 
