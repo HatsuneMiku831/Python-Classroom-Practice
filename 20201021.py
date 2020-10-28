@@ -205,6 +205,44 @@ if mod == 7:
 
             mod = 8
 
+if mod == 8:
+
+    for k in range(13):
+
+        if ccardnum.count(k + 1) == 2:
+
+            for x in range(2):
+                
+                ccardnum.remove(k)
+
+            for k in range(13):
+
+                if ccardnum.count(k + 1) == 2:
+                    
+                    ansnum = 8
+                    continue
+
+                else:
+
+                    mod = 9
+
+        else:
+
+            mod = 9
+
+if mod == 9:
+
+    for k in range(13):
+
+        if ccardnum.count(k + 1) == 2:
+
+            ansnum = 9
+            continue
+
+        else:
+
+            mod == 10
+
 print(ccardcolor)
 print(ccardnum)
 print(ccard)
