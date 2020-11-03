@@ -15,7 +15,7 @@ cardcolor = {   1:1, 2:1, 3:1, 4:1, 5:1, 6:1, 7:1, 8:1, 9:1, 10:1, 11:1, 12:1, 1
                 27:3, 28:3, 29:3, 30:3, 31:3, 32:3, 33:3, 34:3, 35:3, 36:3, 37:3, 38:3, 39:3,
                 40:4, 41:4, 42:4, 43:4, 44:4, 45:4, 46:4, 47:4, 48:4, 49:4, 50:4, 51:4, 52:4}
 
-ans = {     0:"test",
+ans = {     0:"無",
             1:"皇家同花順",
             2:"同花順",
             3:"四條",
@@ -52,6 +52,8 @@ for i in range(5):
                 num = int(random.uniform(1, 52))
 
     ccard[i] = num
+
+#ccard = [1, 14, 13, 24, 28]
 
 ccard.sort()
 
@@ -210,10 +212,10 @@ if mod == 8:
     for k in range(13):
 
         if ccardnum.count(k + 1) == 2:
-
-            for x in range(2):
                 
-                ccardnum.remove(k)
+            for a in range(2):
+
+                ccardnum.remove(k + 1)
 
             for k in range(13):
 
@@ -223,6 +225,12 @@ if mod == 8:
                     continue
 
                 else:
+
+                    ccardnum = [0, 0, 0, 0, 0]
+
+                    for i in range(5):
+    
+                        ccardnum[i] = cardnum[ccard[i]]
 
                     mod = 9
 
@@ -241,12 +249,18 @@ if mod == 9:
 
         else:
 
-            mod == 10
+            mod = 10
 
-print(ccardcolor)
-print(ccardnum)
-print(ccard)
-print(mod)
+if mod == 10:
+
+    if ccardnum.count(1) == 1:
+
+        ansnum = 10
+
+# print(ccardcolor)
+# print(ccardnum)
+# print(ccard)
+# print(mod)
 for k in range(5):
 
     print(card[ccard[k]])
