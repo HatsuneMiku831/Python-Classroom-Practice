@@ -53,8 +53,6 @@ for i in range(5):
 
     ccard[i] = num
 
-#ccard = [1, 14, 13, 24, 28]
-
 ccard.sort()
 
 for i in range(5):
