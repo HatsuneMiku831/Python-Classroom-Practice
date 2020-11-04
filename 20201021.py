@@ -35,6 +35,8 @@ num = 0
 mod = 1
 ansnum = 0
 
+
+
 num = int(random.uniform(1, 52))
 
 for i in range(5):
@@ -52,6 +54,8 @@ for i in range(5):
                 num = int(random.uniform(1, 52))
 
     ccard[i] = num
+
+ccard = [40, 27, 1, 25, 51]
 
 ccard.sort()
 
@@ -158,14 +162,27 @@ if mod == 4:
         
         if ccardnum.count(k + 1) == 3:
 
-            for k in range(13):
+            for a in range(3):
+
+                ccardnum.remove(k + 1)
+
+            for i in range(13):
                 
-                if ccardnum.count(k + 1) == 2:
+                if ccardnum.count(i + 1) == 2:
 
                     ansnum = 4
-                    continue
+
+            break
         
         else:
+            
+            ccardnum = [0, 0, 0, 0, 0]
+
+            for i in range(5):
+    
+                ccardnum[i] = cardnum[ccard[i]]
+
+            ccardnum.sort()
 
             mod = 5
 
@@ -251,9 +268,10 @@ if mod == 9:
 
 if mod == 10:
 
-    if ccardnum.count(1) == 1:
+    # if ccardnum.count(1) == 1:
 
-        ansnum = 10
+    #     ansnum = 10
+    ansnum = 10
 
 for k in range(5):
 
