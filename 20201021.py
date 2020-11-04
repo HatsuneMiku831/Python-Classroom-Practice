@@ -255,10 +255,6 @@ if mod == 10:
 
         ansnum = 10
 
-# print(ccardcolor)
-# print(ccardnum)
-# print(ccard)
-# print(mod)
 for k in range(5):
 
     print(card[ccard[k]])
