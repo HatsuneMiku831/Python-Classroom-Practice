@@ -29,7 +29,17 @@ ans = {     0:"無",
 
 randomcard = [0, 0, 0, 0, 0]
 
-def vs(ccard, ccardcolor, ccardnum):
+def vs(inccard, inccardcolor, inccardnum):
+
+    ccard = [0, 0, 0, 0, 0]
+    ccardcolor = [0, 0, 0, 0, 0]
+    ccardnum = [0, 0, 0, 0, 0]
+
+    for i in range(5):
+
+        ccard[i] = inccard[i]
+        ccardcolor[i] = inccardcolor[i]
+        ccardnum[i] = inccardnum[i]
 
     mod = 1
     ansnum = 0
@@ -164,6 +174,12 @@ def vs(ccard, ccardcolor, ccardnum):
 
                 mod = 6
 
+    ccardnum = [0, 0, 0, 0, 0]
+    
+    for i in range(5):
+
+        ccardnum[i] = inccardnum[i]
+
     if mod == 6:
 
         if (ccardnum[4] - ccardnum[0]) == 4:
@@ -265,9 +281,12 @@ acard = randomcard
 acardnum = [0, 0, 0, 0, 0]
 acardcolor = [0, 0, 0, 0, 0]
 
+aans = 0
+
 for i in range(5):
 
-    
+    acardnum[i] = cardnum[acard[i]]
+    acardcolor[i] = cardcolor[acard[i]]
 
 #B
 
@@ -287,9 +306,59 @@ randomcard.sort()
 
 bcard = randomcard
 
+bcardnum = [0, 0, 0, 0, 0]
+bcardcolor = [0, 0, 0, 0, 0]
 
+bans = 0
 
+for i in range(5):
 
+    bcardnum[i] = cardnum[bcard[i]]
+    bcardcolor[i] = cardcolor[bcard[i]]
 
-print(acard)
-print(bcard)
+aans = vs(acard, acardcolor, acardnum)
+bans = vs(bcard, bcardcolor, bcardnum)
+
+avsnum = 0
+bvsnum = 0
+
+if((aans == 10) and (bans == 10)):
+
+    acardnum.sort()
+    bcardnum.sort()
+
+    for i in range(5):
+
+        if(acardnum[i] > bcardnum[i]):
+
+            avsnum = avsnum + 1
+
+        else:
+
+            bvsnum = bvsnum + 1
+
+    if(avsnum > bvsnum):
+
+        print("A組牌贏")
+
+    else:
+
+        print("B組牌贏")
+
+elif(aans < bans):
+
+    print("A組牌贏")
+
+else:
+
+    print("B組牌贏")
+
+print()
+print("A組牌為:", card[acard[0]], card[acard[1]], card[acard[2]], card[acard[3]], card[acard[4]], "(", ans[aans], ")")
+print("B組牌為:", card[bcard[0]], card[bcard[1]], card[bcard[2]], card[bcard[3]], card[bcard[4]], "(", ans[bans], ")")
+print()
+print("以下為快速檢視牌數值大小用OwO (已照由小到大順序排列)")
+acardnum.sort()
+bcardnum.sort()
+print("A:", acardnum)
+print("B:", bcardnum)
