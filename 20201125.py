@@ -29,47 +29,7 @@ ans = {     0:"無",
 
 randomcard = [0, 0, 0, 0, 0]
 
-num = int(random.uniform(1, 52))
-
-for i in range(5):
-
-    if randomcard.count(num) != 0:
-
-        num = int(random.uniform(1, 52))
-
-        if randomcard.count(num) != 0:
-
-            num = int(random.uniform(1, 52))
-
-            if randomcard.count(num) != 0:
-
-                num = int(random.uniform(1, 52))
-
-    randomcard[i] = num
-
-randomcard.sort()
-
-acard = randomcard
-
-#B
-
-randomcard = [0, 0, 0, 0, 0]
-
-num = int(random.uniform(1, 52))
-
-for i in range(5):
-
-    while(randomcard.count(num) + acard.count(num) != 0):
-
-        num = int(random.uniform(1, 52))
-
-    randomcard[i] = num
-
-randomcard.sort()
-
-bcard = randomcard
-
-def vs(ccardcolor, ccardnum):
+def vs(ccard, ccardcolor, ccardnum):
 
     mod = 1
     ansnum = 0
@@ -179,104 +139,157 @@ def vs(ccardcolor, ccardnum):
 
                 break
         
-        else:
+            else:
             
-            ccardnum = [0, 0, 0, 0, 0]
+                ccardnum = [0, 0, 0, 0, 0]
 
-            for i in range(5):
+                for i in range(5):
     
-                ccardnum[i] = cardnum[ccard[i]]
+                    ccardnum[i] = cardnum[ccard[i]]
 
-            ccardnum.sort()
+                ccardnum.sort()
 
-            mod = 5
+                mod = 5
 
-if mod == 5:
+    if mod == 5:
 
-    for k in range(4):
+        for k in range(4):
         
-        if ccardcolor.count(k + 1) == 5:
+            if ccardcolor.count(k + 1) == 5:
 
-            ansnum = 5
-            continue
+                ansnum = 5
+                continue
 
-        else:
+            else:
 
-            mod = 6
+                mod = 6
 
-if mod == 6:
+    if mod == 6:
 
-    if (ccardnum[4] - ccardnum[0]) == 4:
+        if (ccardnum[4] - ccardnum[0]) == 4:
 
-        ansnum = 6
-
-    else:
-
-        mod = 7
-
-if mod == 7:
-
-    for k in range(13):
-
-        if ccardnum.count(k + 1) == 3:
-
-            ansnum = 7
-            continue
+            ansnum = 6
 
         else:
 
-            mod = 8
+            mod = 7
 
-if mod == 8:
+    if mod == 7:
 
-    for k in range(13):
+        for k in range(13):
 
-        if ccardnum.count(k + 1) == 2:
+            if ccardnum.count(k + 1) == 3:
+
+                ansnum = 7
+                continue
+
+            else:
+
+                mod = 8
+
+    if mod == 8:
+
+        for k in range(13):
+
+            if ccardnum.count(k + 1) == 2:
                 
-            for a in range(2):
+                for a in range(2):
 
-                ccardnum.remove(k + 1)
+                    ccardnum.remove(k + 1)
 
-            for k in range(13):
+                for k in range(13):
 
-                if ccardnum.count(k + 1) == 2:
+                    if ccardnum.count(k + 1) == 2:
                     
-                    ansnum = 8
-                    continue
+                        ansnum = 8
+                        continue
 
-                else:
+                    else:
 
-                    ccardnum = [0, 0, 0, 0, 0]
+                        ccardnum = [0, 0, 0, 0, 0]
 
-                    for i in range(5):
+                        for i in range(5):
     
-                        ccardnum[i] = cardnum[ccard[i]]
+                            ccardnum[i] = cardnum[ccard[i]]
 
-                    mod = 9
+                        mod = 9
 
-        else:
+            else:
 
-            mod = 9
+                mod = 9
 
-if mod == 9:
+    if mod == 9:
 
-    for k in range(13):
+        for k in range(13):
 
-        if ccardnum.count(k + 1) == 2:
+            if ccardnum.count(k + 1) == 2:
 
-            ansnum = 9
-            continue
+                ansnum = 9
+                continue
 
-        else:
+            else:
 
-            mod = 10
+                mod = 10
 
-if mod == 10:
+    if mod == 10:
 
-    # if ccardnum.count(1) == 1:
+        # if ccardnum.count(1) == 1:
 
-    #     ansnum = 10
-    ansnum = 10
+        #     ansnum = 10
+        ansnum = 10
+
+    return ansnum
+
+num = int(random.uniform(1, 52))
+
+for i in range(5):
+
+    if randomcard.count(num) != 0:
+
+        num = int(random.uniform(1, 52))
+
+        if randomcard.count(num) != 0:
+
+            num = int(random.uniform(1, 52))
+
+            if randomcard.count(num) != 0:
+
+                num = int(random.uniform(1, 52))
+
+    randomcard[i] = num
+
+randomcard.sort()
+
+acard = randomcard
+
+acardnum = [0, 0, 0, 0, 0]
+acardcolor = [0, 0, 0, 0, 0]
+
+for i in range(5):
+
+    
+
+#B
+
+randomcard = [0, 0, 0, 0, 0]
+
+num = int(random.uniform(1, 52))
+
+for i in range(5):
+
+    while(randomcard.count(num) + acard.count(num) != 0):
+
+        num = int(random.uniform(1, 52))
+
+    randomcard[i] = num
+
+randomcard.sort()
+
+bcard = randomcard
+
+
+
+
 
 print(acard)
 print(bcard)
